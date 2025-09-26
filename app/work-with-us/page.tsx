@@ -89,7 +89,7 @@ const CustomCheckbox: React.FC<CustomCheckboxProps> = ({ name, checked, onChange
 };
 
 // Custom Select Component
-const CustomSelect: React.FC<CustomSelectProps> = ({ name, value, onChange, options, placeholder, required = false, className = "" }) => {
+const CustomSelect: React.FC<CustomSelectProps> = ({ name, value, onChange, options, placeholder, required = false, className = "" }) => { // eslint-disable-line @typescript-eslint/no-unused-vars
   const [isOpen, setIsOpen] = useState(false);
 
   const handleSelect = (optionValue: string) => {
@@ -207,7 +207,7 @@ export default function WorkWithUs() {
   ];
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement> | { target: { name: string; value?: string; checked?: boolean; type: string } }) => {
-    const { name, type } = e.target;
+    const { name, type: _ } = e.target; // eslint-disable-line @typescript-eslint/no-unused-vars
     let value: string | boolean;
     
     if ('checked' in e.target && e.target.checked !== undefined) {
@@ -231,7 +231,7 @@ export default function WorkWithUs() {
 
     try {
       // Validate form data with Zod
-      const validatedData = formSchema.parse(formData);
+      const validatedData = formSchema.parse(formData); // eslint-disable-line @typescript-eslint/no-unused-vars
       
       // Simulate API call
       await new Promise(resolve => setTimeout(resolve, 2000));
@@ -345,7 +345,7 @@ export default function WorkWithUs() {
             </div>
 
             <p className="text-lg lg:text-xl text-white/90 max-w-3xl mx-auto leading-relaxed">
-              We're currently looking for skilled independent contractors for house & commercial cleaning across Liverpool, Manchester, Wirral, Chester, Oakenholt, and St. Helens.
+              We&apos;re currently looking for skilled independent contractors for house &amp; commercial cleaning across Liverpool, Manchester, Wirral, Chester, Oakenholt, and St. Helens.
             </p>
           </div>
 

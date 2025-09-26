@@ -6,23 +6,27 @@ import ContactModal from "./ContactModal";
 import { useContactModal } from "../hooks/useContactModal";
 
 export default function AboutSection() {
-  const { isOpen, openModal, closeModal } = useContactModal();
+  const { isOpen, openModal: _, closeModal } = useContactModal(); // eslint-disable-line @typescript-eslint/no-unused-vars
   return (
     <section className="py-20 bg-white relative">
       {/* Floating Element - Center Left */}
       <div className="absolute top-1/2 -translate-y-1/2 -left-20 z-10 opacity-20 hover:opacity-40 transition-opacity duration-300">
-        <img
+        <Image
           src="/floating-elements/ooorganize.svg"
           alt="Decorative floating element"
+          width={256}
+          height={256}
           className="w-48 h-48 md:w-56 md:h-56 lg:w-64 lg:h-64"
         />
       </div>
 
       {/* Floating Element - Center Right */}
       <div className="absolute top-1/2 -translate-y-1/2 -right-20 z-10 opacity-20 hover:opacity-40 transition-opacity duration-300">
-        <img
+        <Image
           src="/floating-elements/ooorganize.svg"
           alt="Decorative floating element"
+          width={256}
+          height={256}
           className="w-48 h-48 md:w-56 md:h-56 lg:w-64 lg:h-64"
         />
       </div>
@@ -67,11 +71,11 @@ export default function AboutSection() {
             <div className="space-y-6 md:space-y-8 text-base md:text-lg text-gray-700 leading-relaxed">
               <div className="space-y-4 md:space-y-6">
                 <p className="text-lg md:text-2xl font-medium text-gray-600 leading-snug">
-                  We love to clean. We know that not everyone does, but we're pretty sure that everyone loves a clean space.
+                  We love to clean. We know that not everyone does, but we&apos;re pretty sure that everyone loves a clean space.
                 </p>
 
                 <p className="text-base md:text-lg leading-relaxed">
-                  That's why we've made it our full-time job to help people live and work in cleaner spaces. We are a reliable and trustworthy cleaning service operating across Liverpool, Manchester, Wirral, Chester, Oakenholt, and St. Helens.
+                  That&apos;s why we&apos;ve made it our full-time job to help people live and work in cleaner spaces. We are a reliable and trustworthy cleaning service operating across Liverpool, Manchester, Wirral, Chester, Oakenholt, and St. Helens.
                 </p>
               </div>
 
@@ -81,7 +85,7 @@ export default function AboutSection() {
                 </p>
 
                 <p className="text-lg md:text-xl font-medium text-gray-500 italic leading-relaxed border-l-4 border-[var(--primary-color)] pl-4 md:pl-6">
-                  We'll come to your space with a smile and a sponge, and we won't leave until everything is sparkling.
+                  We&apos;ll come to your space with a smile and a sponge, and we won&apos;t leave until everything is sparkling.
                 </p>
 
                 <p className="text-base md:text-lg leading-relaxed">

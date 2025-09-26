@@ -145,7 +145,7 @@ export default function ServicesSection() {
 
                   {/* Features List */}
                   <div className="space-y-4">
-                    <h4 className="text-lg font-semibold text-gray-600">What's Included:</h4>
+                    <h4 className="text-lg font-semibold text-gray-600">What&apos;s Included:</h4>
                     <div className="border border-gray-200 rounded-lg p-4 bg-gray-50/50">
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                         {service.features.map((feature, featureIndex) => (
@@ -209,7 +209,7 @@ export default function ServicesSection() {
 
                   {/* Features List */}
                   <div className="space-y-4">
-                    <h4 className="text-base font-semibold text-gray-600">What's Included:</h4>
+                    <h4 className="text-base font-semibold text-gray-600">What&apos;s Included:</h4>
                     <div className="border border-gray-200 rounded-lg p-4 bg-gray-50/50">
                       <div className="grid grid-cols-1 gap-3">
                         {service.features.map((feature, featureIndex) => (

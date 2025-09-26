@@ -105,7 +105,7 @@ export default function ContactModal({ isOpen, onClose }: ContactModalProps) {
                   </svg>
                 </button>
               </div>
-              <p className="text-gray-600 mt-2">Choose how you'd like to contact us</p>
+              <p className="text-gray-600 mt-2">Choose how you&apos;d like to contact us</p>
             </div>
             
             {/* Contact Options */}
@@ -160,7 +160,7 @@ export default function ContactModal({ isOpen, onClose }: ContactModalProps) {
             <div className="flex items-center justify-between">
               <div>
                 <h3 className="text-2xl font-bold text-gray-900">Get in Touch</h3>
-                <p className="text-gray-600 mt-1">Choose how you'd like to contact us</p>
+                <p className="text-gray-600 mt-1">Choose how you&apos;d like to contact us</p>
               </div>
               <button
                 onClick={onClose}

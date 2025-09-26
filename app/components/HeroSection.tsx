@@ -1,7 +1,6 @@
 "use client"
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
 import ContactModal from "./ContactModal";
 import { useContactModal } from "../hooks/useContactModal";
@@ -78,7 +77,7 @@ export default function HeroSection() {
                 <div className="mt-4 w-24 h-1 bg-[var(--primary-hover)] rounded-full animate-fade-in-up delay-400"></div>
               </h1>
               <p className="mt-6 text-lg md:text-xl leading-relaxed max-w-2xl text-white/90 animate-fade-in-up delay-500">
-                You deserve a spotless home, and that's exactly our specialty. 
+                You deserve a spotless home, and that&apos;s exactly our specialty. 
                 Professional cleaning services that give you more time for what matters most.
               </p>
               

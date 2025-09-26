@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import Image from "next/image";
 
 interface AirlinenHeroSectionProps {
   openModal: () => void;
@@ -36,16 +37,20 @@ export default function AirlinenHeroSection({ openModal }: AirlinenHeroSectionPr
 
       {/* Floating Elements */}
       <div className="absolute top-1/2 -translate-y-1/2 -left-20 z-10 opacity-20 hover:opacity-40 transition-opacity duration-300">
-        <img
+        <Image
           src="/floating-elements/ooorganize.svg"
           alt="Decorative floating element"
+          width={256}
+          height={256}
           className="w-48 h-48 md:w-56 md:h-56 lg:w-64 lg:h-64"
         />
       </div>
       <div className="absolute top-1/2 -translate-y-1/2 -right-20 z-10 opacity-20 hover:opacity-40 transition-opacity duration-300">
-        <img
+        <Image
           src="/floating-elements/ooorganize.svg"
           alt="Decorative floating element"
+          width={256}
+          height={256}
           className="w-48 h-48 md:w-56 md:h-56 lg:w-64 lg:h-64"
         />
       </div>

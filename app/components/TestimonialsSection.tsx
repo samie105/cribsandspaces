@@ -1,7 +1,8 @@
 'use client';
 
-import { useState, useEffect, useRef } from 'react';
-import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious, CarouselApi } from '@/components/ui/carousel';
+import { useState, useEffect } from 'react';
+import { Carousel, CarouselContent, CarouselItem, CarouselApi } from '@/components/ui/carousel';
+import Image from 'next/image';
 
 interface Testimonial {
   id: number;
@@ -98,9 +99,11 @@ export default function TestimonialsSection() {
     <section className="py-20 relative overflow-hidden">
       {/* Floating Element - Top Right */}
       <div className="absolute rotate-15 -top-90 -right-60 z-10 opacity-10 hover:opacity-40 transition-opacity duration-300">
-        <img
+        <Image
           src="/floating-elements/floater.svg"
           alt="Decorative floating element"
+          width={768}
+          height={768}
           className="w-[48rem] h-[48rem] md:w-[56rem] md:h-[56rem] lg:w-[64rem] lg:h-[64rem]"
         />
       </div>
@@ -153,7 +156,7 @@ export default function TestimonialsSection() {
 
                     {/* Testimonial Text */}
                     <blockquote className="text-[var(--text-dark)] leading-relaxed mb-6 font-light text-sm lg:text-base line-clamp-4">
-                      "{testimonial.text}"
+                      &ldquo;{testimonial.text}&rdquo;
                     </blockquote>
 
                     {/* Author Info */}

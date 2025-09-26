@@ -15,18 +15,22 @@ export default function OfficeCleaningSection() {
 
       {/* Floating Element - Center Left */}
       <div className="absolute top-1/2 -translate-y-1/2 -left-20 z-10 opacity-20 hover:opacity-40 transition-opacity duration-300">
-        <img
+        <Image
           src="/floating-elements/ooorganize.svg"
           alt="Decorative floating element"
+          width={256}
+          height={256}
           className="w-48 h-48 md:w-56 md:h-56 lg:w-64 lg:h-64"
         />
       </div>
 
       {/* Floating Element - Center Right */}
       <div className="absolute top-1/2 -translate-y-1/2 -right-20 z-10 opacity-20 hover:opacity-40 transition-opacity duration-300">
-        <img
+        <Image
           src="/floating-elements/ooorganize.svg"
           alt="Decorative floating element"
+          width={256}
+          height={256}
           className="w-48 h-48 md:w-56 md:h-56 lg:w-64 lg:h-64"
         />
       </div>
@@ -76,7 +80,7 @@ export default function OfficeCleaningSection() {
             {/* Main Content */}
             <div className="space-y-6 text-white">
               <p className="text-lg leading-relaxed opacity-90">
-                We provide a trustworthy, reliable and professional office & commercial cleaning service to businesses and organisations across Northwest England. Our comprehensive service covers <span className="text-[var(--primary-color)] font-bold">Liverpool</span>, <span className="text-[var(--primary-color)] font-bold">Manchester</span>, <span className="text-[var(--primary-color)] font-bold">Wirral</span>, <span className="text-[var(--primary-color)] font-bold">Chester</span>, <span className="text-[var(--primary-color)] font-bold">Oakenholt</span>, and <span className="text-[var(--primary-color)] font-bold">St. Helens</span>, ensuring that whether you're a small local business or a large corporate office, we can deliver the same high standards of cleanliness and professionalism.
+                We provide a trustworthy, reliable and professional office & commercial cleaning service to businesses and organisations across Northwest England. Our comprehensive service covers <span className="text-[var(--primary-color)] font-bold">Liverpool</span>, <span className="text-[var(--primary-color)] font-bold">Manchester</span>, <span className="text-[var(--primary-color)] font-bold">Wirral</span>, <span className="text-[var(--primary-color)] font-bold">Chester</span>, <span className="text-[var(--primary-color)] font-bold">Oakenholt</span>, and <span className="text-[var(--primary-color)] font-bold">St. Helens</span>, ensuring that whether you&apos;re a small local business or a large corporate office, we can deliver the same high standards of cleanliness and professionalism.
               </p>
 
               <p className="text-base leading-relaxed opacity-80">

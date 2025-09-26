@@ -91,7 +91,7 @@ const CustomCheckbox: React.FC<CustomCheckboxProps> = ({ name, checked, onChange
 };
 
 // Custom Select Component
-const CustomSelect: React.FC<CustomSelectProps> = ({ name, value, onChange, options, placeholder, required = false, className = "" }) => {
+const CustomSelect: React.FC<CustomSelectProps> = ({ name, value, onChange, options, placeholder, required = false, className = "" }) => { // eslint-disable-line @typescript-eslint/no-unused-vars
   const [isOpen, setIsOpen] = useState(false);
 
   const handleSelect = (optionValue: string) => {
@@ -244,7 +244,7 @@ export default function GetAQuote() {
   ];
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement> | { target: { name: string; value?: string; checked?: boolean; type: string } }) => {
-    const { name, type } = e.target;
+    const { name, type: _ } = e.target; // eslint-disable-line @typescript-eslint/no-unused-vars
     let value: string | boolean;
 
     if ('checked' in e.target && e.target.checked !== undefined) {
@@ -268,7 +268,7 @@ export default function GetAQuote() {
 
     try {
       // Validate form data with Zod
-      const validatedData = quoteFormSchema.parse(formData);
+      const validatedData = quoteFormSchema.parse(formData); // eslint-disable-line @typescript-eslint/no-unused-vars
 
       // Simulate API call
       await new Promise(resolve => setTimeout(resolve, 2000));
@@ -385,7 +385,7 @@ export default function GetAQuote() {
 
             <div className="space-y-4">
               <p className="text-lg lg:text-xl text-white/90 max-w-3xl mx-auto leading-relaxed">
-                Don't forget we use your cleaning products & equipment to make sure your home smells the way you want & to cover any allergies.
+                Don&apos;t forget we use your cleaning products &amp; equipment to make sure your home smells the way you want &amp; to cover any allergies.
               </p>
 
               <p className="text-base lg:text-lg text-white/80 max-w-4xl mx-auto leading-relaxed">

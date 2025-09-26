@@ -11,16 +11,20 @@ export default function AirlinenWhyChooseUsSection({ openModal }: AirlinenWhyCho
     <section className="py-20 bg-black relative">
       {/* Floating Elements */}
       <div className="absolute top-1/2 -translate-y-1/2 -left-20 z-10 opacity-20 hover:opacity-40 transition-opacity duration-300">
-        <img
+        <Image
           src="/floating-elements/ooorganize.svg"
           alt="Decorative floating element"
+          width={256}
+          height={256}
           className="w-48 h-48 md:w-56 md:h-56 lg:w-64 lg:h-64"
         />
       </div>
       <div className="absolute top-1/2 -translate-y-1/2 -right-20 z-10 opacity-20 hover:opacity-40 transition-opacity duration-300">
-        <img
+        <Image
           src="/floating-elements/ooorganize.svg"
           alt="Decorative floating element"
+          width={256}
+          height={256}
           className="w-48 h-48 md:w-56 md:h-56 lg:w-64 lg:h-64"
         />
       </div>
@@ -104,7 +108,7 @@ export default function AirlinenWhyChooseUsSection({ openModal }: AirlinenWhyCho
                   <h4 className="text-xl font-semibold text-[var(--primary-color)]">Dedicated Account Management</h4>
                 </div>
                 <p className="text-white/90 leading-relaxed">
-                  Personal account manager and 7-day customer support. We're here when you need us most.
+                  Personal account manager and 7-day customer support. We&apos;re here when you need us most.
                 </p>
               </div>
             </div>

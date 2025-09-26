@@ -6,7 +6,7 @@ interface ContactSectionProps {
   openModal: () => void;
 }
 
-export default function ContactSection({ openModal }: ContactSectionProps) {
+export default function ContactSection({ openModal }: ContactSectionProps) { // eslint-disable-line @typescript-eslint/no-unused-vars
   const [formData, setFormData] = useState({
     name: '',
     email: '',

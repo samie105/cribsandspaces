@@ -11,18 +11,22 @@ export default function WhyChooseUsSection() {
     <section className="py-20 bg-black relative">
       {/* Floating Element - Center Left */}
       <div className="absolute top-1/2 -translate-y-1/2 -left-20 z-10 opacity-20 hover:opacity-40 transition-opacity duration-300">
-        <img
+        <Image
           src="/floating-elements/ooorganize.svg"
           alt="Decorative floating element"
+          width={256}
+          height={256}
           className="w-48 h-48 md:w-56 md:h-56 lg:w-64 lg:h-64"
         />
       </div>
 
       {/* Floating Element - Center Right */}
       <div className="absolute top-1/2 -translate-y-1/2 -right-20 z-10 opacity-20 hover:opacity-40 transition-opacity duration-300">
-        <img
+        <Image
           src="/floating-elements/ooorganize.svg"
           alt="Decorative floating element"
+          width={256}
+          height={256}
           className="w-48 h-48 md:w-56 md:h-56 lg:w-64 lg:h-64"
         />
       </div>
@@ -41,7 +45,7 @@ export default function WhyChooseUsSection() {
                 <div className="w-16 h-px bg-gradient-to-r from-transparent via-[var(--primary-color)] to-transparent"></div>
               </div>
               <p className="text-lg text-gray-300 font-light leading-relaxed max-w-2xl mx-auto">
-                Discover what sets us apart as Liverpool's premier cleaning service provider
+                Discover what sets us apart as Liverpool&apos;s premier cleaning service provider
               </p>
             </div>
           </div>
@@ -87,7 +91,7 @@ export default function WhyChooseUsSection() {
                     <span className="text-[var(--primary-color)] font-bold text-lg">-</span>
                     <div>
                       <h4 className="font-semibold text-white">100% Satisfaction Guarantee</h4>
-                      <p className="text-white/80">Not happy? We'll redo the job at no extra cost</p>
+                      <p className="text-white/80">Not happy? We&apos;ll redo the job at no extra cost</p>
                     </div>
                   </div>
 

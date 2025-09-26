@@ -54,9 +54,11 @@ export default function GallerySection() {
     <section className="py-20 bg-gray-50 relative">
       {/* Floating Element */}
       <div className="absolute top-1/2 -translate-y-1/2 -right-20 z-10 opacity-10 hover:opacity-30 transition-opacity duration-300">
-        <img
+        <Image
           src="/floating-elements/floater.svg"
           alt="Decorative floating element"
+          width={384}
+          height={384}
           className="w-64 h-64 md:w-80 md:h-80 lg:w-96 lg:h-96"
         />
       </div>
