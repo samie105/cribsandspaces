@@ -5,6 +5,7 @@ import Link from "next/link";
 import ContactModal from "./ContactModal";
 import { useContactModal } from "../hooks/useContactModal";
 import { useState, useEffect } from "react";
+import Image from "next/image";
 
 export default function HeroSection() {
   const { isOpen, openModal, closeModal } = useContactModal();
@@ -55,10 +56,10 @@ export default function HeroSection() {
  
       {/* Content */}
       <div className="relative z-10 min-h-screen flex items-center">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
+        <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 xl:px-8 w-full">
+          <div className="grid lg:grid-cols-2 gap-1 items-center">
             {/* Left Content */}
-            <div className="text-white animate-fade-in-up">
+            <div className="text-white  animate-fade-in-up pl-0 sm:pl-4 lg:pl-8 bg-red-500/ lg:ml-11 xl:pl-0">
               {/* Enhanced Tag Header - Commented out */}
               {/*
               <div className="inline-flex items-center px-3 py-2 md:px-6 md:py-3 bg-gradient-to-r from-white/20 to-white/10 backdrop-blur-md rounded-full border border-white/30 mb-6 md:mb-8 shadow-none shadow-black/20">
@@ -93,7 +94,7 @@ export default function HeroSection() {
                   </svg>
                   <div className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/10 to-white/0 transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-700"></div>
                 </button>
-                <Link href="/airlinen-hire" className="group relative inline-flex items-center justify-center px-4 py-3 md:px-8 md:py-4 bg-white/10 backdrop-blur-md text-white font-semibold rounded-full border border-white/30 hover:bg-white/20 hover:border-white/50 transform hover:scale-105 transition-all duration-300 shadow-lg overflow-hidden text-sm md:text-base">
+                <Link href="/linen-hire" className="group relative inline-flex items-center justify-center px-4 py-3 md:px-8 md:py-4 bg-white/10 backdrop-blur-md text-white font-semibold rounded-full border border-white/30 hover:bg-white/20 hover:border-white/50 transform hover:scale-105 transition-all duration-300 shadow-lg overflow-hidden text-sm md:text-base">
                   <span className="relative z-10">Linen Hire</span>
                   <svg className="ml-2 md:ml-3 w-3 h-3 md:w-4 md:h-4 group-hover:translate-x-1 transition-transform duration-200 relative z-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />

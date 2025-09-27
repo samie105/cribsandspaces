@@ -105,7 +105,7 @@ export default function AboutSection() {
               </button>
 
               <Link 
-                href="/airlinen-hire"
+                href="/linen-hire"
                 className="group relative inline-flex items-center justify-center px-5 sm:px-6 md:px-8 py-3 sm:py-3.5 md:py-4 bg-black text-white font-semibold text-sm sm:text-base md:text-lg rounded-full shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 overflow-hidden"
               >
                 <span className="relative z-10">Linen Hire</span>

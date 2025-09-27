@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -9,8 +9,6 @@ export default function Navigation() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [activeSection, setActiveSection] = useState('home');
-  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
-  const dropdownTimeoutRef = useRef<NodeJS.Timeout | null>(null);
   const pathname = usePathname();
 
   const navItems = [
@@ -18,8 +16,6 @@ export default function Navigation() {
     { href: "#about", label: "About Us", id: "about" },
     { href: "#why-choose-us", label: "Why Choose Us", id: "why-choose-us" },
     { href: "#services", label: "Services", id: "services" },
-    { href: "#office-cleaning", label: "Office Cleaning", id: "office-cleaning" },
-    { href: "#testimonials", label: "Testimonials", id: "testimonials" },
     { href: "#gallery", label: "Gallery", id: "gallery" },
     { href: "#faq", label: "FAQ", id: "faq" }
   ];
@@ -30,7 +26,7 @@ export default function Navigation() {
       
       // Only detect active sections on the home page
       if (pathname === "/") {
-        const sections = ['home', 'about', 'why-choose-us', 'services', 'office-cleaning', 'testimonials', 'gallery', 'faq'];
+        const sections = ['home', 'about', 'why-choose-us', 'services', 'gallery', 'faq'];
         const scrollPosition = window.scrollY + 100;
 
         for (const section of sections) {
@@ -50,10 +46,7 @@ export default function Navigation() {
     };
 
     const handleClickOutside = (event: MouseEvent) => {
-      const target = event.target as Element;
-      if (!target.closest('.dropdown-container')) {
-        setIsDropdownOpen(false);
-      }
+      // No dropdown to handle click outside for
     };
 
     window.addEventListener('scroll', handleScroll);
@@ -62,9 +55,6 @@ export default function Navigation() {
     return () => {
       window.removeEventListener('scroll', handleScroll);
       document.removeEventListener('mousedown', handleClickOutside);
-      if (dropdownTimeoutRef.current) {
-        clearTimeout(dropdownTimeoutRef.current);
-      }
     };
   }, [pathname]);
 
@@ -98,8 +88,8 @@ export default function Navigation() {
         ? 'bg-black/65 backdrop-blur-xl shadow-2xl border-b border-white/20'
         : 'bg-transparent'
     }`}>
-      <div className="max-w-[99rem] mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center py-6">
+      <div className="max-w-[90rem] mx-auto px-3 sm:px-4 md:px-6 lg:px-8">
+        <div className="flex justify-between items-center py-4 sm:py-5 md:py-6">
           {/* Logo */}
           <div className="flex items-center group">
             <div className="flex-shrink-0">
@@ -109,7 +99,7 @@ export default function Navigation() {
                   alt="Crib & Space Cleaning Services"
                   width={100}
                   height={20}
-                  className={`transition-all duration-300`}
+                  className={`transition-all duration-300 w-20 h-auto sm:w-24 md:w-[100px]`}
                 />
               </Link>
             </div>
@@ -117,7 +107,7 @@ export default function Navigation() {
 
           {/* Enhanced Navigation Links */}
           <div className="hidden xl:block">
-            <div className="ml-10 flex items-baseline space-x-4">
+            <div className="ml-6 sm:ml-8 md:ml-10 flex items-baseline space-x-1 sm:space-x-2 md:space-x-3 xl:space-x-1">
               {navItems.map((item) => (
                 <Link key={item.id} href={getNavHref(item.href)} className={getNavLinkClass(item.id)}>
                   <span className="relative z-10">{item.label}</span>
@@ -141,88 +131,28 @@ export default function Navigation() {
                 isScrolled ? 'text-white' : 'text-white drop-shadow-sm'
               }`}>07700 151227</span>
             </div> */}
-            <div className="flex items-center space-x-3">
-              {/* Work With Us Dropdown */}
-              <div
-                className="relative dropdown-container"
-                onMouseEnter={() => {
-                  if (dropdownTimeoutRef.current) {
-                    clearTimeout(dropdownTimeoutRef.current);
-                    dropdownTimeoutRef.current = null;
-                  }
-                  setIsDropdownOpen(true);
-                }}
-                onMouseLeave={() => {
-                  dropdownTimeoutRef.current = setTimeout(() => {
-                    setIsDropdownOpen(false);
-                  }, 300);
-                }}
-              >
-                <button
-                  onClick={() => {
-                    if (dropdownTimeoutRef.current) {
-                      clearTimeout(dropdownTimeoutRef.current);
-                    }
-                    setIsDropdownOpen(!isDropdownOpen);
-                  }}
-                  className="group relative inline-flex items-center px-6 py-3 bg-white/10 border border-white/30 text-white font-bold rounded-full hover:bg-white/20 hover:border-white/50 hover:backdrop-blur-sm transform hover:scale-105 transition-all duration-300 shadow-xl overflow-hidden"
-                >
+            <div className="flex items-center space-x-2 md:space-x-3">
+              {pathname !== "/work-with-us" && (
+                <Link href="/work-with-us" className="group relative inline-flex items-center px-3 py-1.5 sm:px-4 sm:py-2 md:px-5 md:py-2.5 bg-white/10 border border-white/30 text-white font-bold text-xs md:text-sm rounded-full hover:bg-white/20 hover:border-white/50 hover:backdrop-blur-sm transform hover:scale-105 transition-all duration-300 shadow-xl overflow-hidden">
                   <span className="relative z-10">Work With Us</span>
-                  <svg className={`ml-3 w-5 h-5 transition-all duration-300 relative z-10 ${isDropdownOpen ? 'rotate-90 text-blue-300' : 'group-hover:text-blue-200'}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg className="ml-3 w-5 h-5 group-hover:translate-x-1 transition-transform duration-200 relative z-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                   </svg>
                   <div className="absolute inset-0 bg-gradient-to-r from-blue-500/0 via-blue-400/10 to-blue-500/0 transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-700 rounded-full"></div>
                   <div className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/5 to-white/0 transform -skew-x-12 translate-x-full group-hover:-translate-x-full transition-transform duration-700 rounded-full"></div>
-                </button>
+                </Link>
+              )}
 
-                {/* Dropdown Menu */}
-                <div
-                  className={`absolute top-full mt-2 w-48 bg-white/95 backdrop-blur-xl rounded-2xl shadow-2xl border border-white/20 overflow-hidden transition-all duration-300 ${
-                    isDropdownOpen ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-2 pointer-events-none'
-                  }`}
-                >
-                  <div className="py-2">
-                    {pathname !== "/work-with-us" && (
-                      <Link
-                        href="/work-with-us"
-                        className="block px-4 py-3 text-gray-800 hover:bg-[var(--primary-color)] hover:text-white transition-all duration-200 font-medium"
-                        onClick={() => {
-                          if (dropdownTimeoutRef.current) {
-                            clearTimeout(dropdownTimeoutRef.current);
-                          }
-                          setIsDropdownOpen(false);
-                        }}
-                      >
-                        <div className="flex items-center">
-                          <span>Work With Us</span>
-                          <svg className="ml-auto w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                          </svg>
-                        </div>
-                      </Link>
-                    )}
-                    {pathname !== "/airlinen-hire" && (
-                      <Link
-                        href="/airlinen-hire"
-                        className="block px-4 py-3 text-gray-800 hover:bg-[var(--primary-color)] hover:text-white transition-all duration-200 font-medium"
-                        onClick={() => {
-                          if (dropdownTimeoutRef.current) {
-                            clearTimeout(dropdownTimeoutRef.current);
-                          }
-                          setIsDropdownOpen(false);
-                        }}
-                      >
-                        <div className="flex items-center">
-                          <span>Linen Hire</span>
-                          <svg className="ml-auto w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                          </svg>
-                        </div>
-                      </Link>
-                    )}
-                  </div>
-                </div>
-              </div>
+              {pathname !== "/linen-hire" && (
+                <Link href="/linen-hire" className="group relative inline-flex items-center px-3 py-1.5 sm:px-4 sm:py-2 md:px-5 md:py-2.5 bg-white/10 border border-white/30 text-white font-bold text-xs md:text-sm rounded-full hover:bg-white/20 hover:border-white/50 hover:backdrop-blur-sm transform hover:scale-105 transition-all duration-300 shadow-xl overflow-hidden">
+                  <span className="relative z-10">Linen Hire</span>
+                  <svg className="ml-3 w-5 h-5 group-hover:translate-x-1 transition-transform duration-200 relative z-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  </svg>
+                  <div className="absolute inset-0 bg-gradient-to-r from-blue-500/0 via-blue-400/10 to-blue-500/0 transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-700 rounded-full"></div>
+                  <div className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/5 to-white/0 transform -skew-x-12 translate-x-full group-hover:-translate-x-full transition-transform duration-700 rounded-full"></div>
+                </Link>
+              )}
 
               {pathname !== "/get-a-quote" && (
                 <Link href="/get-a-quote" className="group relative inline-flex items-center px-6 py-3 bg-gradient-to-r from-[var(--primary-color)] to-[var(--primary-hover)] text-white font-bold rounded-full hover:shadow-2xl hover:shadow-[var(--primary-color)]/40 transform hover:scale-105 transition-all duration-300 shadow-xl overflow-hidden">
@@ -368,8 +298,8 @@ export default function Navigation() {
                       </Link>
                     )}
 
-                    {pathname !== "/airlinen-hire" && (
-                      <Link href="/airlinen-hire" className={`group relative w-full inline-flex items-center justify-center px-6 py-4 bg-white/10 border border-white/30 text-white font-bold rounded-full transition-all duration-400 shadow-xl overflow-hidden hover:bg-white/20 hover:border-white/50`}>
+                    {pathname !== "/linen-hire" && (
+                      <Link href="/linen-hire" className={`group relative w-full inline-flex items-center justify-center px-6 py-4 bg-white/10 border border-white/30 text-white font-bold rounded-full transition-all duration-400 shadow-xl overflow-hidden hover:bg-white/20 hover:border-white/50`}>
                         <span className="relative z-10 font-bold text-base tracking-wide">Linen Hire</span>
                         <svg className="ml-3 w-5 h-5 group-hover:translate-x-2 transition-all duration-300 relative z-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />

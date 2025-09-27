@@ -31,7 +31,8 @@ export default function BedPacksSection() {
         </div>
 
         <div className="bg-white rounded-2xl border border-gray-200/60 overflow-hidden backdrop-blur-sm">
-          <table className="w-full overflow-hidden">
+          <div className="overflow-x-auto">
+            <table className="w-full min-w-[600px] overflow-hidden">
               <thead className="bg-gradient-to-r from-gray-50 to-gray-100/80">
                 <tr>
                   <th className="px-8 py-6 text-left text-sm font-bold text-[var(--text-dark)] border-b-2 border-gray-200/80 uppercase tracking-wider">
@@ -139,6 +140,7 @@ export default function BedPacksSection() {
                 </tr>
               </tbody>
             </table>
+          </div>
         </div>
       </div>
     </section>
