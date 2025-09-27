@@ -50,7 +50,7 @@ export default function FooterSection() {
                 <div>
                   <p className="font-semibold text-white">Address</p>
                   <p className="text-gray-300">Northwest England</p>
-                  <p className="text-sm text-gray-400 mt-1">Serving Liverpool, Manchester, Wirral, Chester, Oakenholt & St. Helens</p>
+                  <p className="text-sm text-gray-400 mt-1">Serving Liverpool, Manchester, Wirral, Chester & St. Helens</p>
                 </div>
               </div>
             </div>
@@ -64,7 +64,7 @@ export default function FooterSection() {
               <div>
                 <h4 className="font-semibold text-white mb-2">Assistance Hours</h4>
                 <div className="text-gray-300 space-y-1">
-                  <p>Mon – Sat: 9:00am - 8:00pm</p>
+                  <p>Mon – Sat: 8:00am - 8:00pm</p>
                   <p>Sunday: CLOSED</p>
                 </div>
               </div>
@@ -72,7 +72,7 @@ export default function FooterSection() {
               <div>
                 <h4 className="font-semibold text-white mb-2">Areas Covered</h4>
                 <p className="text-gray-300">Northwest England Service Area</p>
-                <p className="text-sm text-gray-400 mt-1">Liverpool • Manchester • Wirral • Chester • Oakenholt • St. Helens</p>
+                <p className="text-sm text-gray-400 mt-1">Liverpool • Manchester • Wirral • Chester • St. Helens</p>
               </div>
             </div>
 

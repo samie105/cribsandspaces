@@ -345,7 +345,7 @@ export default function WorkWithUs() {
             </div>
 
             <p className="text-lg lg:text-xl text-white/90 max-w-3xl mx-auto leading-relaxed">
-              We&apos;re currently looking for skilled independent contractors for house &amp; commercial cleaning across Liverpool, Manchester, Wirral, Chester, Oakenholt, and St. Helens.
+              We&apos;re currently looking for skilled independent contractors for house &amp; commercial cleaning across Liverpool, Manchester, Wirral, Chester, and St. Helens.
             </p>
           </div>
 

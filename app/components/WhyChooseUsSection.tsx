@@ -75,7 +75,7 @@ export default function WhyChooseUsSection() {
                     <span className="text-[var(--primary-color)] font-bold text-lg">-</span>
                     <div>
                       <h4 className="font-semibold text-white">Local Northwest Team</h4>
-                      <p className="text-white/80">We serve Liverpool, Manchester, Wirral, Chester, Oakenholt, and St. Helens</p>
+                      <p className="text-white/80">We serve Liverpool, Manchester, Wirral, Chester, and St. Helens</p>
                     </div>
                   </div>
 

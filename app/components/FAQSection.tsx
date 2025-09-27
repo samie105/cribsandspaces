@@ -35,7 +35,7 @@ export default function FAQSection() {
     },
     {
       question: "What is the cost of cleaning?",
-      answer: "You can use our free quote service on the front page of the website or our app."
+      answer: "You can use our free quote service on the front page of the website or contact us on WhatsApp."
     },
     {
       question: "Do you do background checks on your cleaners?",
@@ -51,7 +51,7 @@ export default function FAQSection() {
     },
     {
       question: "Do your cleaners bring their own cleaning equipment?",
-      answer: "We use your equipment and chemicals as you know what your house smells like and what is safe. So please leave out what you would like us to use."
+      answer: "We are happy to bring our own equipment and products and if you want us to use your equipment and products to maintain the signature scent in your home, do let us know at least 24 hours to the clean."
     },
     {
       question: "Does somebody have to be at home?",
@@ -67,11 +67,11 @@ export default function FAQSection() {
     },
     {
       question: "Payments",
-      answer: "All payments are covered on line."
+      answer: "All payments are made on line."
     },
     {
       question: "Cancellations?",
-      answer: "You can make a cancellation up to 24 hours before the bookings."
+      answer: "You can make a cancellation up to 48 hours before the bookings."
     }
   ];
 

@@ -15,8 +15,8 @@ const geistMono = Geist_Mono({
 
 
 export const metadata: Metadata = {
-  title: "Crib & Space Cleaning - Professional Cleaning Services Liverpool, Manchester, Wirral, Chester, Oakenholt, St. Helens",
-  description: "Professional cleaning services across Liverpool, Manchester, Wirral, Chester, Oakenholt, and St. Helens. Residential and commercial cleaning with attention to detail. Book your cleaning service today.",
+  title: "Crib & Space Cleaning - Professional Cleaning Services Liverpool, Manchester, Wirral, Chester, St. Helens",
+  description: "Professional cleaning services across Liverpool, Manchester, Wirral, Chester, and St. Helens. Residential and commercial cleaning with attention to detail. Book your cleaning service today.",
 };
 
 export default function RootLayout({

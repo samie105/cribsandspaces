@@ -80,7 +80,7 @@ export default function OfficeCleaningSection() {
             {/* Main Content */}
             <div className="space-y-6 text-white">
               <p className="text-lg leading-relaxed opacity-90">
-                We provide a trustworthy, reliable and professional office & commercial cleaning service to businesses and organisations across Northwest England. Our comprehensive service covers <span className="text-[var(--primary-color)] font-bold">Liverpool</span>, <span className="text-[var(--primary-color)] font-bold">Manchester</span>, <span className="text-[var(--primary-color)] font-bold">Wirral</span>, <span className="text-[var(--primary-color)] font-bold">Chester</span>, <span className="text-[var(--primary-color)] font-bold">Oakenholt</span>, and <span className="text-[var(--primary-color)] font-bold">St. Helens</span>, ensuring that whether you&apos;re a small local business or a large corporate office, we can deliver the same high standards of cleanliness and professionalism.
+                We provide a trustworthy, reliable and professional office & commercial cleaning service to businesses and organisations across Northwest England. Our comprehensive service covers <span className="text-[var(--primary-color)] font-bold">Liverpool</span>, <span className="text-[var(--primary-color)] font-bold">Manchester</span>, <span className="text-[var(--primary-color)] font-bold">Wirral</span>, <span className="text-[var(--primary-color)] font-bold">Chester</span>, and <span className="text-[var(--primary-color)] font-bold">St. Helens</span>, ensuring that whether you&apos;re a small local business or a large corporate office, we can deliver the same high standards of cleanliness and professionalism.
               </p>
 
               <p className="text-base leading-relaxed opacity-80">
@@ -156,7 +156,7 @@ export default function OfficeCleaningSection() {
                 <h4 className="text-xl font-semibold text-[var(--primary-color)]">Office & General Cleaning</h4>
               </div>
               <p className="text-white/90 leading-relaxed">
-                Our contract cleaning team look after over 100 customers. All staff receive industry leading training and their work is monitored closely. They are responsible for ensuring specifications are being met and standards are exceeded at every possible opportunity.
+                We look after over 100 customers. All staff receive industry leading training and their work is monitored closely. They are responsible for ensuring specifications are being met and standards are exceeded at every possible opportunity.
               </p>
             </div>
 
@@ -170,7 +170,7 @@ export default function OfficeCleaningSection() {
                 <h4 className="text-xl font-semibold text-[var(--primary-color)]">Clinical, Medical, and Health Centre Cleaning</h4>
               </div>
               <p className="text-white/90 leading-relaxed mb-3">
-                We carry out daily cleaning to GP, medical, dental, cosmetic and healthcare centers and surgeries. We are also able to provide specialist cleaning services for contamination and sanitation cleaning requirements, including emergency cleaning services.
+                We carry out daily cleaning to GPs, medical, dental, cosmetic and healthcare centers and surgeries. We are also able to provide specialist cleaning services for contamination and sanitation cleaning requirements, including emergency cleaning services.
               </p>
             </div>
 

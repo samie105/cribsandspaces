@@ -45,7 +45,7 @@ export default function AboutSection() {
                 <div className="w-16 h-px bg-gradient-to-r from-transparent via-[var(--primary-color)] to-transparent"></div>
               </div>
               <p className="text-lg text-[var(--text-light)] font-light leading-relaxed max-w-2xl mx-auto">
-                Your trusted Liverpool cleaning experts committed to exceptional service and customer satisfaction
+                Your trusted North West cleaning experts committed to exceptional service and customer satisfaction
               </p>
             </div>
           </div>
@@ -75,7 +75,7 @@ export default function AboutSection() {
                 </p>
 
                 <p className="text-base md:text-lg leading-relaxed">
-                  That&apos;s why we&apos;ve made it our full-time job to help people live and work in cleaner spaces. We are a reliable and trustworthy cleaning service operating across Liverpool, Manchester, Wirral, Chester, Oakenholt, and St. Helens.
+                  That&apos;s why we&apos;ve made it our full-time job to help people live and work in cleaner spaces. We are a reliable and trustworthy cleaning service operating across Liverpool, Manchester, Wirral, Chester, and St. Helens.
                 </p>
               </div>
 
