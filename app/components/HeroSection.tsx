@@ -4,12 +4,14 @@
 import Link from "next/link";
 import ContactModal from "./ContactModal";
 import { useContactModal } from "../hooks/useContactModal";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 
 export default function HeroSection() {
   const { isOpen, openModal, closeModal } = useContactModal();
   const [scrollY, setScrollY] = useState(0);
+  const [videoError, setVideoError] = useState(false);
+  const videoRef = useRef<HTMLVideoElement>(null);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -19,6 +21,20 @@ export default function HeroSection() {
     window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  const handleVideoError = () => {
+    setVideoError(true);
+  };
+
+  const handleVideoLoad = () => {
+    // Try to play the video
+    if (videoRef.current) {
+      videoRef.current.play().catch(() => {
+        // Autoplay failed, show fallback image
+        setVideoError(true);
+      });
+    }
+  };
 
   return (
     <section className="relative h-screen overflow-hidden">
@@ -30,10 +46,14 @@ export default function HeroSection() {
         }}
       >
         <video
+          ref={videoRef}
           autoPlay
           loop
           muted
           playsInline
+          preload="metadata"
+          onError={handleVideoError}
+          onLoadedData={handleVideoLoad}
           className="w-full h-full object-cover object-center"
           // poster="/assets/hero-section-image.png"
         >
@@ -47,6 +67,18 @@ export default function HeroSection() {
             priority
           /> */}
         </video>
+        
+        {/* Fallback image if video fails to load or autoplay is blocked */}
+        {videoError && (
+          <Image
+            src="/assets/hero-section-image.jpg"
+            alt="Professional cleaning service"
+            fill
+            className="object-cover object-center"
+            priority
+          />
+        )}
+        
         {/* Enhanced overlay for better text readability */}
         <div className="absolute inset-0 bg-gradient-to-br from-black/70 via-black/70 to-black/70"></div>
       </div>

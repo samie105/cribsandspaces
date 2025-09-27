@@ -369,7 +369,7 @@ export default function GetAQuote() {
           <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <div className="max-w-3xl mx-auto">
               <div className="mb-6">
-                <h1 className="text-4xl lg:text-5xl xl:text-6xl font-light text-white mb-4" style={{ fontFamily: 'MonteCarlo, cursive' }}>
+                <h1 className="text-4xl lg:text-5xl xl:text-6xl font-light text-white mb-4" style={{ fontFamily: 'var(--font-montecarlo), cursive' }}>
                   Get <span className="text-[var(--primary-color)]">A Quote</span>
                 </h1>
                 <div className="flex items-center justify-center gap-4 mb-6">

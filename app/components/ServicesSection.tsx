@@ -83,7 +83,7 @@ export default function ServicesSection() {
           <div className="text-center m/b-16">
             <div className="max-w-3xl mx-auto">
               <div className="mb-6">
-                <h2 className="text-4xl lg:text-5xl xl:text-6xl font-light text-[var(--text-dark)] mb-4" style={{ fontFamily: 'MonteCarlo, cursive' }}>
+                <h2 className="text-4xl lg:text-5xl xl:text-6xl font-light text-[var(--text-dark)] mb-4" style={{ fontFamily: 'var(--font-montecarlo), cursive' }}>
                   Our <span className="text-[var(--primary-color)]">Services</span>
                 </h2>
                 <div className="flex items-center justify-center gap-4 mb-6">
