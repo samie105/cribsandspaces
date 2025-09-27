@@ -26,7 +26,7 @@ export default function AirlinenHeroSection({ openModal }: AirlinenHeroSectionPr
         <div 
           className="w-full h-full bg-cover bg-center bg-no-repeat" 
           style={{ 
-            backgroundImage: 'url("/assets/hero-section-image.jpg")',
+            backgroundImage: 'url("/gallery/IMG_0021.png")',
             transform: `translateY(${scrollY * 0.5}px)`,
           }}
         >

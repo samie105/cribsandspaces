@@ -57,7 +57,7 @@ export default function HeroSection() {
           className="w-full h-full object-cover object-center"
           // poster="/assets/hero-section-image.png"
         >
-          <source src="/assets/herovid.mp4" type="video/mp4" />
+          <source src="/assets/herovids.mp4" type="video/mp4" />
           {/* Fallback image if video fails to load */}
           {/* <Image
             src="/assets/hero-section-image.png"
