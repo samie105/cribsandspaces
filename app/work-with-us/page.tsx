@@ -186,10 +186,7 @@ export default function WorkWithUs() {
   // Select options
   const workTypeOptions: Option[] = [
     { value: '', label: 'Select work type' },
-    { value: 'cleaner', label: 'Cleaner' },
-    { value: 'handyman-gardening', label: 'Handyman/Gardening' },
-    { value: 'home-help', label: 'Home Help' },
-    { value: 'dog-walker', label: 'Dog Walker' }
+    { value: 'cleaner', label: 'Cleaner' }
   ];
 
   const yesNoOptions: Option[] = [
@@ -373,27 +370,39 @@ export default function WorkWithUs() {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div className="flex items-start space-x-3">
                   <div className="w-2 h-2 bg-[var(--primary-color)] rounded-full mt-2 flex-shrink-0"></div>
-                  <p className="text-gray-600">Flexible hours</p>
+                  <p className="text-gray-600">Must hold a valid DBS check (compulsory)</p>
                 </div>
                 <div className="flex items-start space-x-3">
                   <div className="w-2 h-2 bg-[var(--primary-color)] rounded-full mt-2 flex-shrink-0"></div>
-                  <p className="text-gray-600">Jobs are allocated from our mobile app - just click to accept</p>
+                  <p className="text-gray-600">Prior cleaning experience (residential and/or commercial preferred)</p>
                 </div>
                 <div className="flex items-start space-x-3">
                   <div className="w-2 h-2 bg-[var(--primary-color)] rounded-full mt-2 flex-shrink-0"></div>
-                  <p className="text-gray-600">A vehicle is required (not in all cases)</p>
+                  <p className="text-gray-600">Ability to work independently and manage time effectively</p>
                 </div>
                 <div className="flex items-start space-x-3">
                   <div className="w-2 h-2 bg-[var(--primary-color)] rounded-full mt-2 flex-shrink-0"></div>
-                  <p className="text-gray-600">Most jobs will have the cleaning equipment on site, but please make sure you have the basics</p>
+                  <p className="text-gray-600">Strong attention to detail and commitment to high standards</p>
                 </div>
                 <div className="flex items-start space-x-3">
                   <div className="w-2 h-2 bg-[var(--primary-color)] rounded-full mt-2 flex-shrink-0"></div>
-                  <p className="text-gray-600">A DBS background check is required</p>
+                  <p className="text-gray-600">Should be able to supply personal indemnity insurance</p>
                 </div>
                 <div className="flex items-start space-x-3">
                   <div className="w-2 h-2 bg-[var(--primary-color)] rounded-full mt-2 flex-shrink-0"></div>
-                  <p className="text-gray-600">You will need to supply your own insurance</p>
+                  <p className="text-gray-600">Reliable transportation to job locations (own car is a plus but not compulsory)</p>
+                </div>
+                <div className="flex items-start space-x-3">
+                  <div className="w-2 h-2 bg-[var(--primary-color)] rounded-full mt-2 flex-shrink-0"></div>
+                  <p className="text-gray-600">Flexible availability (including some weekends if required)</p>
+                </div>
+                <div className="flex items-start space-x-3">
+                  <div className="w-2 h-2 bg-[var(--primary-color)] rounded-full mt-2 flex-shrink-0"></div>
+                  <p className="text-gray-600">Must be trustworthy, professional, and respectful of client property</p>
+                </div>
+                <div className="flex items-start space-x-3">
+                  <div className="w-2 h-2 bg-[var(--primary-color)] rounded-full mt-2 flex-shrink-0"></div>
+                  <p className="text-gray-600">Legal right to work in the country</p>
                 </div>
               </div>
             </div>

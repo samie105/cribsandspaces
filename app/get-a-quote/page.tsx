@@ -194,7 +194,8 @@ export default function GetAQuote() {
     { value: 'regular', label: 'Regular Clean' },
     { value: 'deep-clean', label: 'Deep Clean' },
     { value: 'move-in-out', label: 'Move In/Out Clean' },
-    { value: 'post-construction', label: 'Post Construction Clean' }
+    { value: 'post-construction', label: 'Post Construction Clean' },
+    { value: 'serviced-accommodation', label: 'Serviced Accommodation Clean' }
   ];
 
   const frequencyOptions: Option[] = [
@@ -378,18 +379,16 @@ export default function GetAQuote() {
                   <div className="w-16 h-px bg-gradient-to-r from-transparent via-[var(--primary-color)] to-transparent"></div>
                 </div>
                 <p className="text-lg text-white/90 font-light leading-relaxed max-w-2xl mx-auto">
-                  Professional Cleaning Services
+                 A spotless space is just a click away!
                 </p>
               </div>
             </div>
 
             <div className="space-y-4">
-              <p className="text-lg lg:text-xl text-white/90 max-w-3xl mx-auto leading-relaxed">
-                Don&apos;t forget we use your cleaning products &amp; equipment to make sure your home smells the way you want &amp; to cover any allergies.
-              </p>
+          
 
               <p className="text-base lg:text-lg text-white/80 max-w-4xl mx-auto leading-relaxed">
-                So please make sure they are left out on the days of your cleaner visiting.
+                Cleaning made easy! Just tell us what you need and we&apos;ll whip up a personalized quote in no time. No stress, no strings — just sparkling results that fit your lifestyle.
               </p>
             </div>
           </div>

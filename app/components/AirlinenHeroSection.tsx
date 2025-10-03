@@ -123,7 +123,7 @@ export default function AirlinenHeroSection({ openModal }: AirlinenHeroSectionPr
                     </svg>
                     <div className="text-2xl font-bold text-[var(--primary-color)]">200TC</div>
                   </div>
-                  <div className="text-white/80 text-xs">Thread Count</div>
+                  <div className="text-white/80 text-xs">Minimum Thread Count</div>
                 </div>
                 <div className="bg-white/5 backdrop-blur-md p-4 rounded-xl border border-white/10">
                   <div className="flex items-center gap-2 mb-2">

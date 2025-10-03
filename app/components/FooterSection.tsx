@@ -106,14 +106,14 @@ export default function FooterSection() {
             <h3 className="text-xl font-bold text-white mb-6">Find Us</h3>
             <div className="bg-gray-800 rounded-lg overflow-hidden">
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d456785.9938054889!2d-2.8951!3d53.4837!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x487b0000000000001%3A0x1!2sNorthwest%20England!5e0!3m2!1sen!2s!4v1699999999999!5m2!1sen!2s"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d37912.09487087778!2d-2.9534649847656247!3d53.40088899999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x487b21e7c7c4c000%3A0x1!2sLiverpool%2C%20UK!5e0!3m2!1sen!2s!4v1699999999999!5m2!1sen!2s"
                 width="100%"
                 height="250"
                 style={{ border: 0 }}
                 allowFullScreen
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
-                title="Northwest England Service Area Map"
+                title="Liverpool Service Area Map"
                 className="w-full"
               ></iframe>
             </div>
@@ -129,9 +129,8 @@ export default function FooterSection() {
               © {new Date().getFullYear()} Crib & Space Cleaning. All rights reserved.
             </p>
             <div className="flex gap-6 text-sm text-gray-400">
-              <Link href="#" className="hover:text-[var(--primary-color)] transition-colors duration-300">Privacy Policy</Link>
-              <Link href="#" className="hover:text-[var(--primary-color)] transition-colors duration-300">Terms of Service</Link>
-              <Link href="#" className="hover:text-[var(--primary-color)] transition-colors duration-300">Cookie Policy</Link>
+              <Link href="/privacy-policy" className="hover:text-[var(--primary-color)] transition-colors duration-300">Privacy Policy</Link>
+              <Link href="/terms-of-service" className="hover:text-[var(--primary-color)] transition-colors duration-300">Terms of Service</Link>
             </div>
           </div>
         </div>

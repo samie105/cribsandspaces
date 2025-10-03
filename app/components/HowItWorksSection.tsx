@@ -5,17 +5,17 @@ export default function HowItWorksSection() {
     {
       id: 1,
       title: "Setup Account",
-      description: "Create your account and get access to our booking portal with dedicated account manager support."
+      description: "We create your account and you gain access to your dedicated account manager."
     },
     {
       id: 2,
-      title: "Book Online",
+      title: "Book Deliveries",
       description: "Book collections and deliveries until 3:30pm the day before, or same-day subject to availability."
     },
     {
       id: 3,
-      title: "Delivered Fresh",
-      description: "Premium quality linen delivered in 90-minute slots with real-time tracking and notifications."
+      title: "Quality Delivered",
+      description: "Premium quality linen delivered in 90-minute slots, including same-day deliveries for both contract and one-off hires."
     }
   ];
 

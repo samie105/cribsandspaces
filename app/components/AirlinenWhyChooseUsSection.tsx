@@ -80,7 +80,7 @@ export default function AirlinenWhyChooseUsSection({ openModal }: AirlinenWhyCho
                   <h4 className="text-xl font-semibold text-[var(--primary-color)]">Lightning Fast Delivery</h4>
                 </div>
                 <p className="text-white/90 leading-relaxed">
-                  90-minute delivery slots across Liverpool and surrounding areas. Real-time tracking keeps you informed.
+                90-minute delivery slots across Liverpool and surrounding areas. Quick and efficient delivery timeframes.
                 </p>
               </div>
 
@@ -94,7 +94,7 @@ export default function AirlinenWhyChooseUsSection({ openModal }: AirlinenWhyCho
                   <h4 className="text-xl font-semibold text-[var(--primary-color)]">Premium Quality Standards</h4>
                 </div>
                 <p className="text-white/90 leading-relaxed">
-                  200 thread count linen and 600GSM towels. All items professionally cleaned, pressed, and quality checked.
+                  200 thread count linen and 600GSM towels. All items professionally cleaned, and quality checked.
                 </p>
               </div>
 
@@ -116,7 +116,7 @@ export default function AirlinenWhyChooseUsSection({ openModal }: AirlinenWhyCho
             {/* Stats Section */}
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-8">
               <div className="text-center bg-white/5 backdrop-blur-md p-4 rounded-xl border border-white/10">
-                <div className="text-2xl font-bold text-[var(--primary-color)] mb-1">1000+</div>
+                <div className="text-2xl font-bold text-[var(--primary-color)] mb-1">100+</div>
                 <div className="text-white/80 text-xs">Properties Served</div>
               </div>
               <div className="text-center bg-white/5 backdrop-blur-md p-4 rounded-xl border border-white/10">
@@ -124,7 +124,7 @@ export default function AirlinenWhyChooseUsSection({ openModal }: AirlinenWhyCho
                 <div className="text-white/80 text-xs">On-Time Delivery</div>
               </div>
               <div className="text-center bg-white/5 backdrop-blur-md p-4 rounded-xl border border-white/10">
-                <div className="text-2xl font-bold text-[var(--primary-color)] mb-1">24hrs</div>
+                <div className="text-2xl font-bold text-[var(--primary-color)] mb-1">48hrs</div>
                 <div className="text-white/80 text-xs">Turnaround Time</div>
               </div>
               <div className="text-center bg-white/5 backdrop-blur-md p-4 rounded-xl border border-white/10">

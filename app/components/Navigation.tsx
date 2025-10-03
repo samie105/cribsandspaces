@@ -45,7 +45,7 @@ export default function Navigation() {
       }
     };
 
-    const handleClickOutside = (event: MouseEvent) => {
+    const handleClickOutside = () => {
       // No dropdown to handle click outside for
     };
 
