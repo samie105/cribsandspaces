@@ -5,10 +5,13 @@ import Navigation from "../components/Navigation";
 import CustomCursor from "../components/CustomCursor";
 import SocialSidebar from "../components/SocialSidebar";
 import FooterSection from "../components/FooterSection";
+import ContactModal from "../components/ContactModal";
+import { useContactModal } from "../hooks/useContactModal";
 import Link from "next/link";
 
 export default function PrivacyPolicy() {
   const [scrollY, setScrollY] = useState(0);
+  const { isOpen, openModal, closeModal } = useContactModal();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -233,15 +236,15 @@ export default function PrivacyPolicy() {
                     <path strokeLinecap="round" strokeLinejoin="round" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
                   </svg>
                 </Link>
-                <Link
-                  href="/get-a-quote"
+                <button
+                  onClick={openModal}
                   className="group inline-flex items-center justify-center px-10 py-4 bg-[var(--primary-color)] text-white font-light text-lg border border-[var(--primary-color)] rounded-full hover:bg-white hover:text-[var(--primary-color)] transition-all duration-300"
                 >
-                  <span className="relative z-10">Get a Quote</span>
+                  <span className="relative z-10">Contact Us</span>
                   <svg className="w-5 h-5 ml-3 relative z-10 transform group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={1.5}>
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M3 8l7.89 7.89a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                   </svg>
-                </Link>
+                </button>
               </div>
             </div>
           </div>
@@ -250,6 +253,9 @@ export default function PrivacyPolicy() {
         {/* Footer */}
         <FooterSection />
       </div>
+
+      {/* Contact Modal */}
+      <ContactModal isOpen={isOpen} onClose={closeModal} />
     </div>
   );
 }

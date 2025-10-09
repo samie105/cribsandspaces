@@ -1,6 +1,8 @@
 "use client";
 
 import { useState } from "react";
+import { toast } from "sonner";
+import { submitLinenHireForm } from "../actions/linenHireActions";
 
 interface ContactSectionProps {
   openModal: () => void;
@@ -13,6 +15,7 @@ export default function ContactSection({ openModal }: ContactSectionProps) { // 
     phone: '',
     message: ''
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData({
@@ -21,11 +24,34 @@ export default function ContactSection({ openModal }: ContactSectionProps) { // 
     });
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle form submission
-    console.log('Form submitted:', formData);
-    // You can add your form submission logic here
+    
+    if (isSubmitting) return;
+    
+    setIsSubmitting(true);
+
+    try {
+      const result = await submitLinenHireForm(formData);
+
+      if (result.success) {
+        toast.success("Your enquiry has been sent successfully! We'll get back to you soon.");
+        // Reset form
+        setFormData({
+          name: '',
+          email: '',
+          phone: '',
+          message: ''
+        });
+      } else {
+        toast.error(result.message || "Failed to send enquiry. Please try again.");
+      }
+    } catch (error) {
+      console.error("Error submitting form:", error);
+      toast.error("An unexpected error occurred. Please try again.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -119,12 +145,15 @@ export default function ContactSection({ openModal }: ContactSectionProps) { // 
 
               <button
                 type="submit"
-                className="w-full bg-[var(--primary-color)] text-white py-4 rounded-full font-semibold hover:bg-[var(--primary-hover)] transition-colors duration-300 shadow-lg hover:shadow-xl transform hover:scale-[1.02] flex items-center justify-center gap-2"
+                disabled={isSubmitting}
+                className="w-full bg-[var(--primary-color)] text-white py-4 rounded-full font-semibold hover:bg-[var(--primary-hover)] transition-colors duration-300 shadow-lg hover:shadow-xl transform hover:scale-[1.02] flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none"
               >
-                <span>Send Enquiry</span>
-                <svg className="w-5 h-5 transform group-hover:translate-x-1 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                </svg>
+                <span>{isSubmitting ? "Sending..." : "Send Enquiry"}</span>
+                {!isSubmitting && (
+                  <svg className="w-5 h-5 transform group-hover:translate-x-1 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  </svg>
+                )}
               </button>
             </form>
           </div>

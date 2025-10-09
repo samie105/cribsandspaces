@@ -24,10 +24,10 @@ export default function BedPacksSection() {
 
         {/* What is in a Bed Pack? Section */}
         <div className="mb-12 max-w-2xl mx-auto text-center">
-          <h3 className="text-2xl md:text-3xl font-bold text-[var(--primary-color)] mb-4">What is in a Bed Pack?</h3>
+          <h3 className="text-2xl md:text-3xl font-light text-[var(--primary-color)] mb-4">What is in a Bed Pack?</h3>
           <p className="text-base md:text-lg text-gray-700 mb-2">We Provide Four Bed Pack Sizes. All bed linen is a minimum 200 thread count. All towels are a minimum of 600GSM.</p>
           <p className="text-base md:text-lg text-gray-700 mb-2">Bed Linen Packs are clean, crisp. Delivered straight to your door. Once used, pickup will be arranged along with a fresh replacement.</p>
-          <button className="mt-4 px-8 py-3 bg-gradient-to-r from-[var(--primary-color)] to-[var(--primary-hover)] text-white font-semibold rounded-full shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300">Enquire</button>
+          {/* <button className="mt-4 px-8 py-3 bg-gradient-to-r from-[var(--primary-color)] to-[var(--primary-hover)] text-white font-semibold rounded-full shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300">Enquire</button> */}
         </div>
 
         <div className="bg-white rounded-2xl border border-gray-200/60 overflow-hidden backdrop-blur-sm">

@@ -8,6 +8,7 @@ import FooterSection from "../components/FooterSection";
 import Link from "next/link";
 import { z } from "zod";
 import { toast, Toaster } from "sonner";
+import { submitQuoteForm } from "../actions/quoteActions";
 
 // Types
 interface Option {
@@ -42,6 +43,7 @@ const quoteFormSchema = z.object({
   city: z.string().optional(),
   postalCode: z.string().optional(),
   serviceType: z.string().min(1, "Please select a service type"),
+  otherServiceDetails: z.string().optional(),
   frequency: z.string().optional(),
   bedrooms: z.string().optional(),
   receptionRooms: z.string().optional(),
@@ -165,6 +167,7 @@ export default function GetAQuote() {
     city: '',
     postalCode: '',
     serviceType: '',
+    otherServiceDetails: '',
     frequency: '',
     bedrooms: '',
     receptionRooms: '',
@@ -195,7 +198,9 @@ export default function GetAQuote() {
     { value: 'deep-clean', label: 'Deep Clean' },
     { value: 'move-in-out', label: 'Move In/Out Clean' },
     { value: 'post-construction', label: 'Post Construction Clean' },
-    { value: 'serviced-accommodation', label: 'Serviced Accommodation Clean' }
+    { value: 'serviced-accommodation', label: 'Serviced Accommodation Clean' },
+    { value: 'office-clean', label: 'Office Clean' },
+    { value: 'other', label: 'Other' }
   ];
 
   const frequencyOptions: Option[] = [
@@ -245,13 +250,13 @@ export default function GetAQuote() {
   ];
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement> | { target: { name: string; value?: string; checked?: boolean; type: string } }) => {
-    const { name, type: _ } = e.target; // eslint-disable-line @typescript-eslint/no-unused-vars
+    const { name, type } = e.target;
     let value: string | boolean;
 
-    if ('checked' in e.target && e.target.checked !== undefined) {
-      value = e.target.checked;
+    if (type === 'checkbox' && 'checked' in e.target) {
+      value = e.target.checked as boolean;
     } else if ('value' in e.target) {
-      value = e.target.value || '';
+      value = e.target.value as string || '';
     } else {
       value = '';
     }
@@ -269,35 +274,43 @@ export default function GetAQuote() {
 
     try {
       // Validate form data with Zod
-      const validatedData = quoteFormSchema.parse(formData); // eslint-disable-line @typescript-eslint/no-unused-vars
+      const validatedData = quoteFormSchema.parse(formData);
 
-      // Simulate API call
-      await new Promise(resolve => setTimeout(resolve, 2000));
+      // Submit to server action
+      const result = await submitQuoteForm(validatedData);
 
-      // Success toast
-      toast.success("Quote request submitted successfully!", {
-        description: "We'll review your request and get back to you within 24 hours.",
-        duration: 5000,
-      });
+      if (result.success) {
+        // Success toast
+        toast.success("Quote request submitted successfully!", {
+          description: "We'll review your request and get back to you within 24 hours.",
+          duration: 5000,
+        });
 
-      // Reset form
-      setFormData({
-        firstName: '',
-        lastName: '',
-        phone: '',
-        email: '',
-        address: '',
-        city: '',
-        postalCode: '',
-        serviceType: '',
-        frequency: '',
-        bedrooms: '',
-        receptionRooms: '',
-        bathrooms: '',
-        hoursRequired: '',
-        clientMessage: '',
-        smsConsent: false
-      });
+        // Reset form
+        setFormData({
+          firstName: '',
+          lastName: '',
+          phone: '',
+          email: '',
+          address: '',
+          city: '',
+          postalCode: '',
+          serviceType: '',
+          otherServiceDetails: '',
+          frequency: '',
+          bedrooms: '',
+          receptionRooms: '',
+          bathrooms: '',
+          hoursRequired: '',
+          clientMessage: '',
+          smsConsent: false
+        });
+      } else {
+        toast.error("Failed to submit request", {
+          description: result.message || "Please try again later.",
+          duration: 4000,
+        });
+      }
 
     } catch (error) {
       if (error instanceof z.ZodError) {
@@ -595,6 +608,24 @@ export default function GetAQuote() {
                   )}
                 </div>
 
+                {/* Other Service Details - Only show if "Other" is selected */}
+                {formData.serviceType === 'other' && (
+                  <div>
+                    <label className="block text-sm font-semibold text-gray-800 mb-2">
+                      Please Describe The Service You Need *
+                    </label>
+                    <input
+                      name="otherServiceDetails"
+                      value={formData.otherServiceDetails}
+                      onChange={handleInputChange}
+                      type="text"
+                      required
+                      className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:ring-2 focus:ring-[var(--primary-color)] focus:border-[var(--primary-color)] transition-all duration-200 resize-none placeholder-gray-400 text-gray-800"
+                      placeholder="Tell us about the specific cleaning service you're looking for..."
+                    />
+                  </div>
+                )}
+
                 {/* Frequency - Only show if regular clean is selected */}
                 {formData.serviceType === 'regular' && (
                   <div>
@@ -639,7 +670,7 @@ export default function GetAQuote() {
                   </div>
                   <div>
                     <label className="block text-sm font-semibold text-gray-800 mb-2">
-                      Number Of Bathrooms
+                      Number of Bathrooms
                     </label>
                     <CustomSelect
                       name="bathrooms"

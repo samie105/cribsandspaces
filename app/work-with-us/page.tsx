@@ -8,6 +8,7 @@ import FooterSection from "../components/FooterSection";
 import Link from "next/link";
 import { z } from "zod";
 import { toast, Toaster } from "sonner";
+import { submitWorkWithUsForm } from "../actions/workWithUsActions";
 
 // Types
 interface Option {
@@ -204,13 +205,13 @@ export default function WorkWithUs() {
   ];
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement> | { target: { name: string; value?: string; checked?: boolean; type: string } }) => {
-    const { name, type: _ } = e.target; // eslint-disable-line @typescript-eslint/no-unused-vars
+    const { name, type } = e.target;
     let value: string | boolean;
     
-    if ('checked' in e.target && e.target.checked !== undefined) {
-      value = e.target.checked;
+    if (type === 'checkbox' && 'checked' in e.target) {
+      value = e.target.checked as boolean;
     } else if ('value' in e.target) {
-      value = e.target.value || '';
+      value = e.target.value as string || '';
     } else {
       value = '';
     }
@@ -228,33 +229,40 @@ export default function WorkWithUs() {
 
     try {
       // Validate form data with Zod
-      const validatedData = formSchema.parse(formData); // eslint-disable-line @typescript-eslint/no-unused-vars
+      const validatedData = formSchema.parse(formData);
       
-      // Simulate API call
-      await new Promise(resolve => setTimeout(resolve, 2000));
-      
-      // Success toast
-      toast.success("Application submitted successfully!", {
-        description: "We'll review your application and get back to you within 24-48 hours.",
-        duration: 5000,
-      });
+      // Submit to server action
+      const result = await submitWorkWithUsForm(validatedData);
 
-      // Reset form
-      setFormData({
-        firstName: '',
-        lastName: '',
-        phone: '',
-        email: '',
-        city: '',
-        postalCode: '',
-        workType: '',
-        legallyEligible: '',
-        backgroundCheck: '',
-        transportation: '',
-        hoursPerWeek: '',
-        references: '',
-        smsConsent: false
-      });
+      if (result.success) {
+        // Success toast
+        toast.success("Application submitted successfully!", {
+          description: "We'll review your application and get back to you within 24-48 hours.",
+          duration: 5000,
+        });
+
+        // Reset form
+        setFormData({
+          firstName: '',
+          lastName: '',
+          phone: '',
+          email: '',
+          city: '',
+          postalCode: '',
+          workType: '',
+          legallyEligible: '',
+          backgroundCheck: '',
+          transportation: '',
+          hoursPerWeek: '',
+          references: '',
+          smsConsent: false
+        });
+      } else {
+        toast.error("Failed to submit application", {
+          description: result.message || "Please try again later.",
+          duration: 4000,
+        });
+      }
 
     } catch (error) {
       if (error instanceof z.ZodError) {
@@ -342,7 +350,7 @@ export default function WorkWithUs() {
             </div>
 
             <p className="text-lg lg:text-xl text-white/90 max-w-3xl mx-auto leading-relaxed">
-              We&apos;re currently looking for skilled independent contractors for house &amp; commercial cleaning across Liverpool, Manchester, Wirral, Chester, and St. Helens.
+              We&apos;re currently looking for professional independent cleaners for house &amp; commercial cleaning across Liverpool, Manchester, Wirral, Chester, and St. Helens.
             </p>
           </div>
 

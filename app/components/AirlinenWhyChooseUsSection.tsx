@@ -135,7 +135,7 @@ export default function AirlinenWhyChooseUsSection({ openModal }: AirlinenWhyCho
           </div>
         </div>
 
-        <div className="mt-16 text-center">
+        {/* <div className="mt-16 text-center">
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <button
               onClick={openModal}
@@ -148,7 +148,7 @@ export default function AirlinenWhyChooseUsSection({ openModal }: AirlinenWhyCho
               <div className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/10 to-white/0 transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-700"></div>
             </button>
           </div>
-        </div>
+        </div> */}
       </div>
     </section>
   );

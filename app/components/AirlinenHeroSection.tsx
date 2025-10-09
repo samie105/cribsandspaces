@@ -85,13 +85,13 @@ export default function AirlinenHeroSection({ openModal }: AirlinenHeroSectionPr
                   </svg>
                   <div className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/10 to-white/0 transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-700"></div>
                 </button>
-                <button className="group relative inline-flex items-center justify-center px-4 py-3 md:px-8 md:py-4 bg-white/10 backdrop-blur-md text-white font-semibold rounded-full border border-white/30 hover:bg-white/20 hover:border-white/50 transform hover:scale-105 transition-all duration-300 shadow-lg overflow-hidden text-sm md:text-base">
+                {/* <button className="group relative inline-flex items-center justify-center px-4 py-3 md:px-8 md:py-4 bg-white/10 backdrop-blur-md text-white font-semibold rounded-full border border-white/30 hover:bg-white/20 hover:border-white/50 transform hover:scale-105 transition-all duration-300 shadow-lg overflow-hidden text-sm md:text-base">
                   <span className="relative z-10">View Packages</span>
                   <svg className="ml-2 md:ml-3 w-3 h-3 md:w-4 md:h-4 group-hover:translate-x-1 transition-transform duration-200 relative z-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                   </svg>
                   <div className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/5 to-white/0 transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-700"></div>
-                </button>
+                </button> */}
               </div>
             </div>
 
